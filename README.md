@@ -82,8 +82,15 @@ must exist before running the script.
 CybOX-to-HTML comes with example input and output files. You can use these to see an example
 of the program's output, or to verify you have installed the program correctly.
 
-    $ java -jar /opt/saxon/saxon9he.jar -xsl:cybox_to_html.xsl -s:examples/CybOX_Iran-Oil_Dynamic.in.xml -o:CybOX_Iran-Oil_Dynamic.out.html
-    $ diff CybOX_Iran-Oil_Dynamic.out.html examples/CybOX_Iran-Oil_Dynamic.out.html
+    $ java -jar /opt/saxon/saxon9he.jar -xsl:cybox_to_html.xsl -s:examples/IranOilDynamic.in.xml -o:IranOilDynamic.html
+    $ diff IranOilDynamic.html examples/IranOilDynamic.out.html
+
+The [example data](/examples) includes the following input (.in.xml) and output (.out.html) files:
+
+* IranOilDynamic: A set of Observables related to the Iran-Oil email attack campaign. Contains Objects, Events, Actions, and Observable Compositions.
+* OpenIOCtoCybOX: An example CybOX document generated from an OpenIOC file using the OpenIOC to CybOX utility. Contains Objects and an Observable Composition.
+* X509toCybOX: An example CybOX document generated from several X509 certs using the X509 to CybOX utility. The simplest example, it contains only Objects.
+
     
 Contributing
 ------------
