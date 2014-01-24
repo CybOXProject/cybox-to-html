@@ -368,15 +368,22 @@
                     .expandableContainer.expanded > .expandableToggle::before,
                     .expandableContainer.expanded.expandableToggle::before
                     {
-                      content: "-";
+                      /*
+                        this is the minus character, which is the
+                        same width as the plus character
+                      */
+                      content: "\2212";
+
                     }
                     .expandableContainer > .expandableToggle::before,
                     .expandableContainer.expandableToggle::before,
                     .nonexpandableContainer::before
                     {
                       color: goldenrod;
+                      /*
                       display: inline-block;
                       width: 1em;
+                      */
                     }
                     .nonexpandableContainer::before
                     {
@@ -386,6 +393,8 @@
                     .expandableToggle
                     {
                       cursor: pointer; 
+                      padding-left: 1.0em;
+                      text-indent: -0.5em;
                     }
                     .expandableContainer > .expandableContents
                     {
@@ -437,6 +446,11 @@
                       display: none;
                     }
                 </style><script type="text/javascript">
+                  
+                  /*! @source http://purl.eligrey.com/github/classList.js/blob/master/classList.js*/
+                  if(typeof document!=="undefined"&&!("classList" in document.createElement("a"))){(function(j){if(!("HTMLElement" in j)&&!("Element" in j)){return}var a="classList",f="prototype",m=(j.HTMLElement||j.Element)[f],b=Object,k=String[f].trim||function(){return this.replace(/^\s+|\s+$/g,"")},c=Array[f].indexOf||function(q){var p=0,o=this.length;for(;p<o;p++){if(p in this&&this[p]===q){return p}}return -1},n=function(o,p){this.name=o;this.code=DOMException[o];this.message=p},g=function(p,o){if(o===""){throw new n("SYNTAX_ERR","An invalid or illegal string was specified")}if(/\s/.test(o)){throw new n("INVALID_CHARACTER_ERR","String contains an invalid character")}return c.call(p,o)},d=function(s){var r=k.call(s.className),q=r?r.split(/\s+/):[],p=0,o=q.length;for(;p<o;p++){this.push(q[p])}this._updateClassName=function(){s.className=this.toString()}},e=d[f]=[],i=function(){return new d(this)};n[f]=Error[f];e.item=function(o){return this[o]||null};e.contains=function(o){o+="";return g(this,o)!==-1};e.add=function(){var s=arguments,r=0,p=s.length,q,o=false;do{q=s[r]+"";if(g(this,q)===-1){this.push(q);o=true}}while(++r<p);if(o){this._updateClassName()}};e.remove=function(){var t=arguments,s=0,p=t.length,r,o=false;do{r=t[s]+"";var q=g(this,r);if(q!==-1){this.splice(q,1);o=true}}while(++s<p);if(o){this._updateClassName()}};e.toggle=function(p,q){p+="";var o=this.contains(p),r=o?q!==true&&"remove":q!==false&&"add";if(r){this[r](p)}return !o};e.toString=function(){return this.join(" ")};if(b.defineProperty){var l={get:i,enumerable:true,configurable:true};try{b.defineProperty(m,a,l)}catch(h){if(h.number===-2146823252){l.enumerable=false;b.defineProperty(m,a,l)}}}else{if(b[f].__defineGetter__){m.__defineGetter__(a,i)}}}(self))};
+                  
+                </script><script type="text/javascript">
                     
                     <!-- toggle top-level Observables -->
                     function toggleDiv(divid, spanID) {
@@ -531,13 +545,9 @@
 
                     <!-- toggle visibility of a container element -->
                     function toggle(containerElement) {
-                        // explicitly setting .className is a cross-browser compatible way to do this
-                        if (containerElement.className.indexOf("collapsed") > -1) {
-                            containerElement.className = "expandableContainer expandableSeparate expanded";
-                        }
-                        else {
-                            containerElement.className = "expandableContainer expandableSeparate collapsed";
-                        }
+                      // now using a shim to support classList in IE8/9
+                      containerElement.classList.toggle("collapsed");
+                      containerElement.classList.toggle("expanded");
                     }
                  
                 </script></head>
@@ -557,10 +567,10 @@
                </thead>
                <TR>
                   <TD>2</TD>
-                  <TD>0</TD>
                   <TD>1</TD>
-                  <TD>x509_to_cybox_example.xml</TD>
-                  <TD>2013-09-20T15:00:07.481-04:00</TD>
+                  <TD>0</TD>
+                  <TD>X509toCybOX.in.xml</TD>
+                  <TD>2014-01-24T16:29:11.499-05:00</TD>
                </TR>
             </table>
          </div>
@@ -586,7 +596,7 @@
                <TBODY>
                   <TR class="odd">
                      <TD>
-                        <div class="collapsibleLabel" style="cursor: pointer;" onclick="toggleDiv('2000000002','d2e4')"><span id="d2e4" style="font-weight:bold; margin:5px; color:#BD9C8C;">+</span>x509_to_cybox:observable-6077c1c7-ea36-4bf8-8db2-1b42f88ed873
+                        <div class="collapsibleLabel" style="cursor: pointer;" onclick="toggleDiv('2000000002','d2e4')"><span id="d2e4" style="font-weight:bold; margin:5px; color:#BD9C8C;">+</span>x509_to_cybox:observable-c4d325d1-d5af-4fa2-b4d1-76408105d299
                         </div>
                      </TD>
                      <TD>X509CertificateObjectType</TD>
@@ -594,7 +604,7 @@
                   <TR class="odd">
                      <TD colspan="2">
                         <div id="2000000002" class="collapsibleContent" style="overflow:hidden; display:none; padding:0px 0px;">
-                           <div id="x509_to_cybox:observable-6077c1c7-ea36-4bf8-8db2-1b42f88ed873" class="baseobserv">
+                           <div id="x509_to_cybox:observable-c4d325d1-d5af-4fa2-b4d1-76408105d299" class="baseobserv">
                               <div id="section">
                                  <table class="one-column-emphasis">
                                     <colgroup>
@@ -753,7 +763,7 @@
                   </TR>
                   <TR class="even">
                      <TD>
-                        <div class="collapsibleLabel" style="cursor: pointer;" onclick="toggleDiv('20000000066','d2e69')"><span id="d2e69" style="font-weight:bold; margin:5px; color:#BD9C8C;">+</span>x509_to_cybox:observable-ef39dfa2-a1ff-483b-84ed-db78e90ac829
+                        <div class="collapsibleLabel" style="cursor: pointer;" onclick="toggleDiv('20000000066','d2e69')"><span id="d2e69" style="font-weight:bold; margin:5px; color:#BD9C8C;">+</span>x509_to_cybox:observable-86328ab7-07c2-4e62-b792-6df7e71a921d
                         </div>
                      </TD>
                      <TD>X509CertificateObjectType</TD>
@@ -761,7 +771,7 @@
                   <TR class="even">
                      <TD colspan="2">
                         <div id="20000000066" class="collapsibleContent" style="overflow:hidden; display:none; padding:0px 0px;">
-                           <div id="x509_to_cybox:observable-ef39dfa2-a1ff-483b-84ed-db78e90ac829" class="baseobserv">
+                           <div id="x509_to_cybox:observable-86328ab7-07c2-4e62-b792-6df7e71a921d" class="baseobserv">
                               <div id="section">
                                  <table class="one-column-emphasis">
                                     <colgroup>

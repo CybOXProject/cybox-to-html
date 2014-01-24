@@ -3,9 +3,9 @@ CybOX XML to HTML Transform
 
 Convert CybOX XML to HTML
 
-**Version**: 2.0beta1
+**Version**: 2.1.0
 
-    Copyright (c) 2013 - The MITRE Corporation
+    Copyright (c) 2014 - The MITRE Corporation
     All rights reserved. See LICENSE.txt for more details.
 
     BY USING THIS PROGRAM, YOU SIGNIFY YOUR ACCEPTANCE OF THE TERMS AND CONDITIONS
@@ -14,7 +14,7 @@ Convert CybOX XML to HTML
 Overview
 --------
 
-This is an XSLT to transform a CybOX 2.0.1 document of Observables into HTML for
+This is an XSLT to transform a CybOX 2.1 document of Observables into HTML for
 easy viewing within a web browser.  The Observables are turned into collapsible elements
 on the screen.  Details about each Observable's contents are displayed in a
 format representing the nested structure of the original document.
@@ -28,7 +28,7 @@ on the right.
 Any time objects are referred to by reference, they can be expanded in-line.
 
 Compatible with:
-* [CybOX 2.0.1](http://cybox.mitre.org/language/version2.0.1/)
+* [CybOX 2.1](http://cybox.mitre.org/language/version2.1/)
 
 Supports:
 - Observable, Observable_Composition
